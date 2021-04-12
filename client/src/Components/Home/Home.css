@@ -1,0 +1,130 @@
+/* 
+======================
+||||  HERO AREA  |||||
+======================
+*/
+
+.hero-area{
+    width: 100%;
+    background-color: var(--bluedark);
+    height: 650px;
+}
+.hero-main{
+    display: flex;
+    flex-direction: row;
+}
+.hero-left{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 100px;
+}
+.hero-left h3{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--white);
+}
+.hero-left p{
+    font-size: 18px;
+    color: var(--greywhite);
+    margin-bottom: 20px;
+}
+
+.hero-btn{
+    width: 200px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.hero-btn:hover{
+    background: var(--litecyne);
+    transition: 0.5s;
+}
+.hero-right{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-right img{
+    width: 500px;
+}
+
+/* 
+==================================
+||||  HERO AREA TABLET STYLE |||||
+==================================
+*/
+
+@media only screen and (max-width: 1024px) {
+    .hero-area{
+        height: 500px;
+    }
+    .hero-main{
+        display: flex;
+        flex-direction: row;
+        padding: 60px 0;
+    }
+    .hero-left{
+        width: 50%!important;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+    .hero-left h3{
+        font-size: 30px;
+    }
+    .hero-left p{
+        font-size: 16px;
+    }
+    
+    .hero-btn{
+        width: 170px;
+        font-size: 16px;
+    }
+
+    .hero-right{
+        box-sizing: border-box;
+        width: 50%;
+    }
+    .hero-right img{
+        width: 300px;
+    }
+    
+  }
+
+/* 
+==================================
+||||  HERO AREA MOBILE STYLE |||||
+==================================
+*/
+
+@media only screen and (max-width: 768px) {
+    .hero-area{
+        height: 700px;
+    }
+    .hero-main{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .hero-left,
+    .hero-right{
+        width: 100%!important;
+        align-items: center;
+        text-align: center;
+        padding: 50px 20px;
+        padding-top: 70px!important;
+    }
+}
+
+
+/* 
+==================================
+||||  HERO AREA MOBILE STYLE |||||
+==================================
+*/

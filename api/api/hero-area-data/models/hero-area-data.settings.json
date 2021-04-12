@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "hero_area_data_s",
+  "info": {
+    "name": "Hero Area Data ",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_area_title": {
+      "type": "string"
+    },
+    "hero_area_description": {
+      "type": "text"
+    },
+    "hero_area_button": {
+      "type": "string"
+    },
+    "hero_area_button_url": {
+      "type": "string"
+    },
+    "hero_area_img": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/hero-area-data",
+      "handler": "hero-area-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/hero-area-data",
+      "handler": "hero-area-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/hero-area-data",
+      "handler": "hero-area-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

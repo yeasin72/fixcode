@@ -21,9 +21,10 @@ body{
 :root {
   --bluedark: #223248;
   --blue: #106FDE;
-  --litecyne: #106FDE; 
+  --litecyne: #3b8eec; 
   --greywhite: #cbcbd5;
   --border: #293d5a;
+  --white: #FFFFFF;
 }
 ::-webkit-scrollbar{
   width: 8px;
@@ -74,7 +75,7 @@ p{
 .default-button{
   text-decoration: none;
   padding: 10px 25px;
-  background: var(--bluedark);
+  background: var(--blue);
   color: #FFF;
   font-weight: 400;
   text-transform: uppercase;
@@ -91,6 +92,7 @@ p{
 .app-content{
   padding-top: 75px;
   width: 100%;
+  height: auto;
   min-height: 70vh;
 }
 @media only screen and (max-width: 1300px) {
