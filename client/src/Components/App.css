@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* 
+===============================
+||||||||| FONT FAMILY |||||||||
+===============================
+
+font-family: 'Nunito', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+/* 
+===============================
+|||||| Default settings ||||||
+===============================
+ */
+body{
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bluedark: #223248;
+  --blue: #106FDE;
+  --litecyne: #106FDE; 
+  --greywhite: #cbcbd5;
+  --border: #293d5a;
+}
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(#223248, #0E63C6);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(#223248, #EC7731);
+}
+a{
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  text-transform: capitalize;
+  color: var(--bluedark);
+  font-size: 16px;
+  outline: none;
+}
+ul{
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5{
+  font-family: 'Rubik', sans-serif;
+  text-transform: capitalize;
+  margin: 5px;
+}
+h1,
+h2,
+h3{
+  font-weight: 700;
+}
+p{
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  margin: 5px;
+}
+.default-button{
+  text-decoration: none;
+  padding: 10px 25px;
+  background: var(--bluedark);
+  color: #FFF;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 4px;
+  margin: 5px 5px;
+}
+.container{
+  width: 1300px;
+  margin: 0 auto;
+}
+.app-content{
+  padding-top: 75px;
+  width: 100%;
+  min-height: 70vh;
+}
+@media only screen and (max-width: 1300px) {
+  .container{
+      width: 1024px;
+  }
+}
+
+/* 
+Tablet Style
+*/
+@media only screen and (max-width: 1024px) {
+  .container{
+      width: 100%;
+  }
+}
+
+

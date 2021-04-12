@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_menus",
+  "info": {
+    "name": "footer_menu"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "link_name": {
+      "type": "string",
+      "required": true
+    },
+    "link_path": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

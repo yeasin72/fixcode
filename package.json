@@ -1,0 +1,24 @@
+{
+  "name": "fixcode",
+  "version": "1.0.0",
+  "description": "fiverr clone",
+  "main": "app.js",
+  "scripts": {
+    "client": "cd client && npm start --color",
+    "backend": "cd api && npm run develop --color",
+    "dev": "concurrently -n 'server,client' -c '#5a189a,#ff7900' \"npm run backend\" \"npm run client\"",
+    "runback": "concurrently -n 'server' -c '#5a189a' \"npm run backend\"",
+    "runfront": "concurrently -n 'client' -c '#ff7900' \"npm run client\""
+  },
+  "keywords": [
+    "fixcode"
+  ],
+  "author": "Yeasin Arafath",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/icons": "^4.11.2",
+    "colors": "^1.4.0",
+    "concurrently": "^6.0.1",
+    "react-loading": "^2.0.3"
+  }
+}

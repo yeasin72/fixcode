@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_data",
+  "info": {
+    "name": "footer_data",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "company_description": {
+      "type": "text",
+      "unique": false,
+      "maxLength": 500
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "email"
+    },
+    "company_address": {
+      "type": "text"
+    },
+    "google_map_address_link": {
+      "type": "string"
+    },
+    "footer_copyright": {
+      "type": "text"
+    },
+    "facebook_link": {
+      "type": "string"
+    },
+    "instagram_link": {
+      "type": "string"
+    },
+    "twitter_link": {
+      "type": "string"
+    },
+    "github_link": {
+      "type": "string"
+    }
+  }
+}

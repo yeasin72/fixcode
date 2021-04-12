@@ -1,0 +1,154 @@
+.site-footer{
+    width: 100%;
+    height: auto;
+    background: var(--bluedark);
+    padding: 60px 0;
+    padding-bottom: 20px;
+}
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.site-details{
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+}
+.footer-logo{
+    box-sizing: border-box;
+    width: 100%;
+}
+.footer-logo img{
+    width: 130px;
+}
+.details-content{
+    width: 100%;
+    padding-right: 80px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+.details-content p{
+    margin-top: 20px;
+    color: var(--greywhite);
+}
+
+.site-links{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.sitelink-heading{
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.sitelink-heading h3{
+    font-size: 22px;
+    color: var(--greywhite);
+    font-weight: 500;
+    width: 100%;
+}
+.shouldbesmall h3{
+    width: 80%;
+}
+.sitelink-heading .underline-border{
+    width: 50px;
+    height: 3px;
+    background: var(--blue);
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.footer-menu{
+    padding-left: 10px;
+    padding-top: 30px;
+}
+.footer-menu li{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    /* align-items: center;
+    justify-content: center; */
+}
+.footer-menu li a{
+    color: var(--greywhite);
+    padding: 5px 20px;
+    letter-spacing: 1px;
+}
+.footer-menu li a:hover{
+    color:#fff;
+    transition: 0.5s;
+}
+
+.site-contact{
+    width: 34%;
+    display: flex;
+    flex-direction: column;
+}
+.socile-media{
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+.socile-media button{
+    padding: 0;
+    margin: 0 7px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.footer-bottom{
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+}
+.footer-bottom p{
+    color: var(--greywhite);
+}
+/* 
+Tablet Style
+*/
+
+@media only screen and (max-width: 1024px) {
+    .details-content{
+        padding-right: 15px;
+    }
+}
+
+/* 
+Moblie Style
+*/
+
+@media only screen and (max-width: 768px) {
+    .sitelink-heading h3{
+        width: 90%;
+    }
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .site-contact,
+    .site-links,
+    .site-details{
+        width: 100%;
+    }
+    .site-contact,
+    .site-links{
+        margin-top: 40px;
+    }
+    .details-content p{
+        margin-top: 5px;
+    }
+    .footer-logo{
+        padding-left: 20px;
+    }
+    .site-footer{
+        padding: 40px 0;
+    }
+    
+}
+
