@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fixcode_users",
+  "info": {
+    "name": "fixcode-users",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "full_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "isverified": {
+      "type": "boolean",
+      "default": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 5
+    },
+    "block": {
+      "type": "boolean",
+      "default": false
+    },
+    "users_permissions_roles": {
+      "plugin": "users-permissions",
+      "collection": "role",
+      "via": "fixcode_user"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
+    "username": {
+      "type": "uid",
+      "required": true,
+      "minLength": 5
+    }
+  }
+}

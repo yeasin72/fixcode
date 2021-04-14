@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepage_data",
+  "info": {
+    "name": "Homepage Data"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "about_company": {
+      "type": "text"
+    },
+    "youtube_video_id": {
+      "type": "string"
+    }
+  }
+}

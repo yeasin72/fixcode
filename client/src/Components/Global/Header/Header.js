@@ -4,7 +4,6 @@ import logo from '../../../logo-white.svg';
 import { Link } from 'react-router-dom';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import MenuIcon from '@material-ui/icons/Menu';
-import Mobilemenu from './Mobile/Mobilemenu'
 
 const Header = () => {
     const [mobileMenuValue, setMobileMenuValue] = useState(false);
@@ -29,7 +28,12 @@ const Header = () => {
                             <li className="item">
                                 <Link className="item-link" to="/contact">contact</Link>
                             </li>
-                            <button className="default-button menu-login">Login</button>
+                            <li className="item">
+                                <Link className="item-link" to="/login">login</Link>
+                            </li>
+                            <Link to="/register">
+                                <button className="default-button menu-login">Register</button>
+                            </Link>
                             
                         </ul>
                         <button className="for-function" onClick={toggleMoblieMenu}>
@@ -43,10 +47,32 @@ const Header = () => {
                         
                     </nav>
                 </div>
-                {mobileMenuValue ? 
-                    <Mobilemenu />
-                : <></>
-                 }
+                {
+                    mobileMenuValue ?
+                    <div className="nav-mobile">
+                    <ul className="nav-items-mobile">
+                                <li className="item">
+                                    <Link className="item-link" to="/" onClick={toggleMoblieMenu}>home</Link>
+                                </li>
+                                <li className="item">
+                                    <Link className="item-link" to="/about" onClick={toggleMoblieMenu}>About</Link>
+                                </li>
+                                <li className="item">
+                                    <Link className="item-link" to="/contact" onClick={toggleMoblieMenu}>contact</Link>
+                                </li>
+                                <li className="item">
+                                    <Link className="item-link" to="/login" onClick={toggleMoblieMenu}>login</Link>
+                                </li>
+                                <Link to="/register">
+                                    <button className="default-button menu-login" onClick={toggleMoblieMenu}>Register</button>
+                                </Link>
+                                
+                        </ul>
+                    </div>
+                    :
+                    <> </>
+                }
+                
                 
             </div>
         </header>

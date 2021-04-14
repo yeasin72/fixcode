@@ -20,9 +20,6 @@ const Heroarea = () => {
         
     }, [])
     
-
-    
-   
     return (
         <div className="hero-area">
             <div style={{backgroundImage: `url("./img/hero-bg.png")`, height: '100%'}}>

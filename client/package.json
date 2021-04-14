@@ -12,8 +12,10 @@
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-modal-video": "^1.2.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-spinners": "^0.10.6",
     "swiper": "^6.5.6",
     "web-vitals": "^1.1.1"
   },

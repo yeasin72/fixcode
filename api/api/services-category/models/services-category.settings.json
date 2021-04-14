@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services_categories",
+  "info": {
+    "name": "Services Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "category_title": {
+      "type": "string"
+    },
+    "category_description": {
+      "type": "text"
+    },
+    "category_icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

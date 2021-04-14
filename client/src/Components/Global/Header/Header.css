@@ -4,6 +4,7 @@
     background: var(--bluedark);
     position: fixed;
     border-bottom: 1px solid var(--border);
+    z-index: 10;
 }
 .headercontent{
     display: flex;
