@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_profiles",
+  "info": {
+    "name": "User profile",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "user_avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "user_bio": {
+      "type": "text"
+    },
+    "user_title": {
+      "type": "string"
+    },
+    "facebook_url": {
+      "type": "string"
+    },
+    "github_url": {
+      "type": "string"
+    },
+    "twitter_url": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string",
+      "unique": true
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,10 +1,13 @@
-import React, {useState} from "react";
-import { Link } from 'react-router-dom'
-import key from '../../../key';
-import axios from 'axios'
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import ScaleLoader from "react-spinners/ScaleLoader";
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import CheckIcon from '@material-ui/icons/Check';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser, profileUser } from '../../../redux/actions/userAction';
 
 const Registersystem = () => {
-    const [errorMsg, setErrorMsg] = useState({err: false, errMsg: ''})
+    const dispatch = useDispatch()
 
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
@@ -13,40 +16,60 @@ const Registersystem = () => {
     const userNameChanged = (e) => setUserName(e.target.value);
     const emailChanged = (e) => setEmail(e.target.value);
     const passwordChanged = (e) => setPassword(e.target.value);
+    const goDashbord = () => window.location.replace("/")
 
-   
+    // @function take response
+    // @resone take response message after submitting form
+    const createNewUser = useSelector(state => state.createNewUser)
     
-    
-
-    const createUser = () => {
-        if(userName.length < 4  ){
-            setErrorMsg({err: true, errMsg: 'Data not valid'})
-        }
-        else if(email.length < 6 ){
-            setErrorMsg({err: true, errMsg: 'Email address not valid'})
-        }
-        else if(password.length < 5 ){
-            setErrorMsg({err: true, errMsg: 'Password not valid'})
-        }
-        else{
-            axios.post(key.createUserApi, {
-                "username": userName,
-                "email": email,
-                "password": password
-            })
-                .then(res => {
-                    console.log(res.data);
-                    setUserName('')
-                    setEmail('')
-                    setPassword('')
-                    setErrorMsg({err: false, errMsg: 'Your account Created'})
-                })
-                .catch(error => {
-                    console.log(error);
-                    setErrorMsg({err: true, errMsg: error.message})
-                })
-        }
+    const {loading, registererror, newuserData } = createNewUser
+    if(newuserData){
+        localStorage.setItem('token', newuserData.jwt);
+        createProfile()
+        goDashbord()
+        
     }
+    
+    function createProfile(){
+        const profileData = {
+            "username": newuserData.user.username,
+            "full_name": null,
+            "user_bio": null,
+            "user_title": null,
+            'user_avatar': null,
+            "github_url": null,
+            "facebook_url": null,
+            "twitter_url": null,
+            "gender": null,
+            "date_of_birth": null,
+            "users_permissions_user": {
+                "username": newuserData.user.username,
+                "_id": newuserData.user.id,
+                "id": newuserData.user.id,
+                "email": newuserData.user.email
+            }
+        }
+        
+        dispatch(profileUser(profileData))
+    }
+
+
+      // @function submit form
+    // @resone to create user & reset form
+    const formData = {
+        "username":userName,
+        "email": email,
+        "password": password
+    }
+    const createUser = () => {
+        
+            setUserName('');
+            setEmail('')
+            setPassword('')
+            dispatch(registerUser(formData))
+        
+    }
+
 
     return (
             <div className="login-system">
@@ -70,13 +93,18 @@ const Registersystem = () => {
                         Register
                         </button>
                     </div>
-                    <div className="form-item">
+                    <div className="form-item msgsec">
                         <p>You already have an account? <Link to="/login">Login</Link></p>
                         {
-                            errorMsg.err ? 
-                            <p className="error">{errorMsg.errMsg}</p>
-                            :
-                            <p className="success">{errorMsg.errMsg}</p>
+                            loading ? 
+                            <ScaleLoader color={'#106FDE'} loading={loading} size={40} />
+                            : registererror ?
+                            <p className="error"><ErrorOutlineIcon /> {registererror[0].messages[0].message}</p>
+                            : newuserData ? 
+                                newuserData.jwt ?
+                                <p className="success"><CheckIcon /> Your account created please login</p> : <></>
+                            : 
+                            <></>
                         }
                         
                         
@@ -87,4 +115,4 @@ const Registersystem = () => {
     );
 };
 
-export default Registersystem;
+export default Registersystem

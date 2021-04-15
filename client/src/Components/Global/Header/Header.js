@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const Header = () => {
+const Header = ({auth}) => {
     const [mobileMenuValue, setMobileMenuValue] = useState(false);
     function toggleMoblieMenu(){
         setMobileMenuValue(!mobileMenuValue)
+    }
+
+    function logOutfromAccount(){
+        localStorage.clear();
+        
     }
     return (
         <header className="mainheader">
@@ -29,11 +34,23 @@ const Header = () => {
                                 <Link className="item-link" to="/contact">contact</Link>
                             </li>
                             <li className="item">
+                                <Link className="item-link" to="/contact">Dashbord</Link>
+                            </li>
+                            {auth ? 
+                                <a href="/login">
+                                    <button className="default-button menu-login" onClick={logOutfromAccount}>Logout</button>
+                                </a>
+                            :
+                            <>
+                            <li className="item">
                                 <Link className="item-link" to="/login">login</Link>
                             </li>
                             <Link to="/register">
                                 <button className="default-button menu-login">Register</button>
                             </Link>
+                            </>
+                            }
+                            
                             
                         </ul>
                         <button className="for-function" onClick={toggleMoblieMenu}>
@@ -61,11 +78,22 @@ const Header = () => {
                                     <Link className="item-link" to="/contact" onClick={toggleMoblieMenu}>contact</Link>
                                 </li>
                                 <li className="item">
+                                    <Link className="item-link" to="/dashbord" onClick={toggleMoblieMenu}>Dashbord</Link>
+                                </li>
+                                {auth ? 
+                                    <a href="/login">
+                                    <button className="default-button menu-login" onClick={logOutfromAccount}>Logout</button>
+                                    </a>
+                                :
+                                <>
+                                <li className="item">
                                     <Link className="item-link" to="/login" onClick={toggleMoblieMenu}>login</Link>
                                 </li>
                                 <Link to="/register">
                                     <button className="default-button menu-login" onClick={toggleMoblieMenu}>Register</button>
                                 </Link>
+                                </>
+                                }
                                 
                         </ul>
                     </div>

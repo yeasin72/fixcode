@@ -569,52 +569,6 @@
                 }
               }
             }
-          },
-          "fixcode_user": {
-            "required": [
-              "id",
-              "full_name",
-              "email",
-              "username"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "full_name": {
-                "type": "string"
-              },
-              "isverified": {
-                "type": "boolean"
-              },
-              "password": {
-                "type": "string"
-              },
-              "block": {
-                "type": "boolean"
-              },
-              "users_permissions_roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "email": {
-                "type": "string"
-              },
-              "username": {
-                "type": "uid"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           }
         }
       },
@@ -644,9 +598,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "fixcode_user": {
-            "type": "string"
           },
           "created_by": {
             "type": "string"

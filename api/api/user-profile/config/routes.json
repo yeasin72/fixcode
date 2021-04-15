@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/fixcode-users",
-      "handler": "fixcode-users.find",
+      "path": "/user-profiles",
+      "handler": "user-profile.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/fixcode-users/count",
-      "handler": "fixcode-users.count",
+      "path": "/user-profiles/count",
+      "handler": "user-profile.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/fixcode-users/:id",
-      "handler": "fixcode-users.findOne",
+      "path": "/user-profiles/:id",
+      "handler": "user-profile.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/fixcode-users",
-      "handler": "fixcode-users.create",
+      "path": "/user-profiles",
+      "handler": "user-profile.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/fixcode-users/:id",
-      "handler": "fixcode-users.update",
+      "path": "/user-profiles/:id",
+      "handler": "user-profile.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/fixcode-users/:id",
-      "handler": "fixcode-users.delete",
+      "path": "/user-profiles/:id",
+      "handler": "user-profile.delete",
       "config": {
         "policies": []
       }

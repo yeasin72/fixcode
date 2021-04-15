@@ -33,10 +33,6 @@
       "via": "role",
       "configurable": false,
       "plugin": "users-permissions"
-    },
-    "fixcode_user": {
-      "via": "users_permissions_roles",
-      "model": "fixcode-users"
     }
   }
 }

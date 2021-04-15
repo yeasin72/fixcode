@@ -16,7 +16,6 @@
   "author": "Yeasin Arafath",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/icons": "^4.11.2",
     "colors": "^1.4.0",
     "concurrently": "^6.0.1",
     "react-loading": "^2.0.3"

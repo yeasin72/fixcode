@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/fixcode-users": {
+    "/user-profiles": {
       "get": {
         "deprecated": false,
-        "description": "Find all the fixcode-users's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve fixcode-users document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Fixcode-users"
+          "User-profile"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new fixcode-users record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve fixcode-users document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Fixcode-users"
+          "User-profile"
         ],
         "requestBody": {
           "description": "",
@@ -252,20 +252,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewFixcode-users"
+                "$ref": "#/components/schemas/NewUser-profile"
               }
             }
           }
         }
       }
     },
-    "/fixcode-users/count": {
+    "/user-profiles/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of fixcode-users documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve fixcode-users document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,18 +311,18 @@
         },
         "summary": "",
         "tags": [
-          "Fixcode-users"
+          "User-profile"
         ],
         "parameters": []
       }
     },
-    "/fixcode-users/{id}": {
+    "/user-profiles/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one fixcode-users record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve fixcode-users document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Fixcode-users"
+          "User-profile"
         ],
         "parameters": [
           {
@@ -385,10 +385,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single fixcode-users record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve fixcode-users document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Fixcode-users"
+          "User-profile"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewFixcode-users"
+                "$ref": "#/components/schemas/NewUser-profile"
               }
             }
           }
@@ -462,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single fixcode-users record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single fixcode-users based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Fixcode-users"
+          "User-profile"
         ],
         "parameters": [
           {
@@ -527,85 +527,153 @@
   },
   "components": {
     "schemas": {
-      "Fixcode-users": {
+      "User-profile": {
         "required": [
-          "id",
-          "full_name",
-          "email",
-          "username"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
           "full_name": {
-            "type": "string",
-            "minLength": 3
+            "type": "string"
           },
-          "isverified": {
-            "type": "boolean",
-            "default": false
-          },
-          "password": {
-            "type": "string",
-            "format": "password",
-            "minLength": 5
-          },
-          "block": {
-            "type": "boolean",
-            "default": false
-          },
-          "users_permissions_roles": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "permissions": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "users": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "fixcode_user": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "user_avatar": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "email": {
+          "user_bio": {
+            "type": "string"
+          },
+          "user_title": {
+            "type": "string"
+          },
+          "facebook_url": {
+            "type": "string"
+          },
+          "github_url": {
+            "type": "string"
+          },
+          "twitter_url": {
+            "type": "string"
+          },
+          "date_of_birth": {
             "type": "string",
-            "minLength": 3
+            "format": "date"
+          },
+          "gender": {
+            "type": "string"
           },
           "username": {
-            "type": "uid",
-            "minLength": 5
+            "type": "string"
+          },
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -613,43 +681,38 @@
           }
         }
       },
-      "NewFixcode-users": {
-        "required": [
-          "full_name",
-          "email",
-          "username"
-        ],
+      "NewUser-profile": {
         "properties": {
           "full_name": {
+            "type": "string"
+          },
+          "user_bio": {
+            "type": "string"
+          },
+          "user_title": {
+            "type": "string"
+          },
+          "facebook_url": {
+            "type": "string"
+          },
+          "github_url": {
+            "type": "string"
+          },
+          "twitter_url": {
+            "type": "string"
+          },
+          "date_of_birth": {
             "type": "string",
-            "minLength": 3
+            "format": "date"
           },
-          "isverified": {
-            "type": "boolean",
-            "default": false
-          },
-          "password": {
-            "type": "string",
-            "format": "password",
-            "minLength": 5
-          },
-          "block": {
-            "type": "boolean",
-            "default": false
-          },
-          "users_permissions_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "email": {
-            "type": "string",
-            "minLength": 3
+          "gender": {
+            "type": "string"
           },
           "username": {
-            "type": "uid",
-            "minLength": 5
+            "type": "string"
+          },
+          "users_permissions_user": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
