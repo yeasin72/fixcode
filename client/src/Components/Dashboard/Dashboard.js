@@ -19,6 +19,7 @@ const Dashboard = () => {
 
     const defaultProfile = useSelector(state => state.defaultProfile)
     const { profileData } = defaultProfile
+
     
     function loadingOff(){
         setdashload(false)
@@ -84,19 +85,19 @@ const Dashboard = () => {
                             </div>
                             <div className="socila-link-item">
                                 <GitHubIcon />
-                                <a href="/">
+                                <a href={profileData? `${profileData.facebook_url}` : "/"}>
                                     Github
                                 </a>
                             </div>
                             <div className="socila-link-item">
                                 <FacebookIcon />
-                                <a href="/">
+                                <a href={profileData? `${profileData.facebook_url}` : "/"}>
                                     Facebook
                                 </a>
                             </div>
                             <div className="socila-link-item">
                                 <TwitterIcon />
-                                <a href="/">
+                                <a href={profileData? `${profileData.twitter_url}` : "/"}>
                                     twitter
                                 </a>
                             </div>
