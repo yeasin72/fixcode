@@ -17,6 +17,9 @@ font-family: 'Rubik', sans-serif;
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
 }
 :root {
   --bluedark: #223248;
@@ -91,6 +94,8 @@ p{
   border: 0px;
   border-radius: 4px;
   margin: 5px 5px;
+  cursor: pointer;
+  outline: none;
 }
 .container{
   width: 1300px;

@@ -1,0 +1,165 @@
+.setprofile-page{
+    width: 100%;
+    height: auto;
+    padding: 80px 0;
+    background: #F7F7F7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+}
+
+.setprofile-main{
+    display: flex;
+    flex-direction: row;
+}
+.setprofile-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.setprofile-heading{
+    width: 100%;
+}
+.setprofile-heading h3{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+.setprofilesystem{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.setprofilesystem .setprofile-item{
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.setprofilesystem .setprofile-item.profilebio,
+.setprofilesystem .setprofile-item.picupload{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.setprofilesystem .setprofile-item input,
+.setprofilesystem .setprofile-item textarea,
+.setprofilesystem .setprofile-item select{
+    width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.setprofilesystem .setprofile-item.picupload input{
+    background: #fff0!important;
+    border: 0px solid;
+    width: 40%;
+}
+.setprofilesystem .setprofile-item textarea{
+    max-width: 100%;
+    height: 200px;
+    max-height: 300px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+}
+.setprofilesystem .setprofile-item p{
+    font-size: 16px;
+    font-weight: 500;
+}
+.setprofilesystem .setprofile-item.submit-btn{
+    padding: 30px 5px;
+}
+.setprofilesystem .setprofile-item.error{
+    width: 100%;
+    padding: 20px 5px;
+    height: 40px;
+}
+.setprofilesystem .setprofile-item.error .errmsg{
+    background: #f44336;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 7px;
+    display: inline;
+}
+.setprofilesystem .setprofile-item.error .successmsg{
+    background: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 7px;
+    display: inline;
+}
+.setprofilesystem .setprofile-item.error p svg{
+    margin-bottom: -7px;
+    margin-right: 5px;
+}
+
+.setprofile-right{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.setprofile-right img{
+    width: 100%;
+}
+
+
+
+/* 
+Tablet Style
+*/
+@media only screen and (max-width: 1024px) {
+    .setprofile-page{
+        background-size: auto;
+    }
+    .setprofile-left{
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .setprofile-right{
+        display: none;
+    }
+}
+
+
+/* 
+Tablet Style
+*/
+@media only screen and (max-width: 768px) {
+    .setprofilesystem .setprofile-item{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+.setprofile-main{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.setprofile-left{
+    width: 100%;
+    box-sizing: border-box;
+}
+.setprofile-right{
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.setprofile-right img{
+    width: 60%;
+} 
+}
+
+
+
+

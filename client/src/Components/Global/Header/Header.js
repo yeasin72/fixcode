@@ -34,7 +34,7 @@ const Header = ({auth}) => {
                                 <Link className="item-link" to="/contact">contact</Link>
                             </li>
                             <li className="item">
-                                <Link className="item-link" to="/contact">Dashbord</Link>
+                                <Link className="item-link" to="/dashboard">Dashbord</Link>
                             </li>
                             {auth ? 
                                 <a href="/login">

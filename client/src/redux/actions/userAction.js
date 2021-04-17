@@ -1,9 +1,6 @@
 import axios from 'axios';
 import key from '../../key'
 import { 
-    USER_CREATE_REQUEST,
-    USER_CREATE_SUCCESS,
-    USER_CREATE_ERROR,
     USER_LOGIN_REQUEST,
     USER_LOGIN_SUCCESS,
     USER_LOGIN_ERROR,
@@ -17,22 +14,6 @@ import {
 
 
 
-export const registerUser = (formdata) => async (dispatch) => {
-    try {
-        dispatch({ type: USER_CREATE_REQUEST })
-        
-        const { data } = await axios.post(key.createUserApi, formdata)
-        dispatch({
-            type: USER_CREATE_SUCCESS,
-            payload: data,
-        })
-    } catch (error) {
-        dispatch({
-            type: USER_CREATE_ERROR,
-            payload: error.response && error.response.data.message ? error.response.data.message : error.message,
-        })
-    }
-}
 
 
 
@@ -77,13 +58,13 @@ export const authUser = () => async (dispatch) => {
     }
 }
 
-
-export const profileUser = (profileData) => async (dispatch) => {
+const profileid = localStorage.getItem('puid')
+export const profileUser = () => async (dispatch) => {
     
     try {
         dispatch({ type: USER_PROFILE_REQUEST })
         
-        const { data } = await axios.post(key.createProfileApi, profileData, {
+        const { data } = await axios.get(`${key.createProfileApi}/${profileid}`, {
             headers:{
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             }

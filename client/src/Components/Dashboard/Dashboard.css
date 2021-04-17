@@ -1,0 +1,195 @@
+.dashboard-page{
+    width: 100%;
+    height: auto;
+    padding: 80px 0;
+    background: #F7F7F7;
+}
+.dashboard-main{
+    display: flex;
+    flex-direction: column;
+}
+.info-section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.visual{
+    width: 30%;
+    margin-right: 40px;
+    background: #fff;
+    padding: 40px;
+    border: 0.5px solid #e4e4e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.visual .profile-avatar{
+    width: 150px;
+    height: 150px;
+}
+.visual .profile-avatar img{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    border-radius: 50%;
+}
+.visual .visual-details{
+    cursor: default;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid #ddd;
+}
+.visual .visual-details h3{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.visual .visual-details h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    color: #62646a;
+}
+.visual .additional-details{
+    cursor: default;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0;
+    border-bottom: 0.5px solid #ddd;
+}
+.visual .additional-details .key-element{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.visual .additional-details .key-element .element-icon svg{
+    font-size: 18px;
+    margin-right: 5px;
+    color: #62646a;
+}
+.visual .additional-details .element-data{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.element-title,
+.element-data{
+    font-weight: 600;
+    color: #62656a;
+}
+.visual .edit-button a{
+    margin: 0 auto;
+}
+.visual .edit-button{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.info{
+    width: 70%;
+    margin-left: 40px;
+    background: #fff;
+    padding: 40px;
+    border: 0.5px solid #e4e4e4;
+    display: flex;
+    flex-direction: column;
+}
+.info .user-description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.info .user-description h2{
+    font-size: 22px;
+    font-weight: 500;
+}
+.info .user-description p{
+    font-size: 15px;
+    font-weight: 600;
+    color: #62656a;
+    letter-spacing: 0.3px;
+}
+.info .socile-links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.info .socile-links .socile-heading{
+    width: 100%;
+}
+.info .socile-links .socila-link-item{
+    width: 100%;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.info .socile-links .socila-link-item svg{
+    height: 18px;
+    margin-right: 5px;
+    color: #62646a;
+}
+.info .socile-links .socila-link-item a{
+    font-size: 15px;
+    font-weight: 600;
+    color: #62656a;
+    letter-spacing: 0.3px;
+}
+
+/* 
+Tablet Style
+*/
+@media only screen and (max-width: 1024px) {
+    .info-section{
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .visual{
+        width: 40%;
+        margin-right: 20px;
+        padding: 20px;
+        
+    }
+    .info{
+        width: 60%;
+        margin-left: 20px;
+    }
+}
+/* 
+Mobile Style
+*/
+@media only screen and (max-width: 768px) {
+    .dashboard-page{
+        padding: 40px 0;
+    }
+    .info-section{
+        padding: 15px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .visual{
+        width: 100%;
+        margin-right: 0px;
+        padding: 40px;
+        box-sizing: border-box;
+        
+    }
+    .info{
+        margin-top: 30px;
+        width: 100%;
+        margin-left: 0px;
+        box-sizing: border-box;
+    }
+}

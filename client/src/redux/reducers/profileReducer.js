@@ -7,11 +7,11 @@ import {
 const profileReducer = (state = { profileData: null }, action) => {
     switch (action.type){
         case USER_PROFILE_REQUEST:
-            return { authloading: true, profileData: null }
+            return { profileloading: true, profileData: null }
         case USER_PROFILE_SUCCESS:
-            return { authloading: false, profileData: action.payload }
+            return { profileloading: false, profileData: action.payload }
         case USER_PROFILE_ERROR:
-            return { authloading: false, error: action.payload, profileData: null }
+            return { profileloading: false, error: action.payload, profileData: null }
         default:
             return state
     }

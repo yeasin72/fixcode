@@ -82,10 +82,12 @@
     font: large Verdana,sans-serif;
     font-size: 15px;
 }
-.login-system .form-item svg.MuiSvgIcon-root{
+.login-system .form-item.password svg.MuiSvgIcon-root{
     margin-left: -31px;
     margin-bottom: -6px;
     color: var(--blue);
+    cursor: pointer!important;
+    z-index: 1;
 }
 
 
@@ -130,6 +132,9 @@
 @media only screen and (max-width: 1024px) {
     .login-system {
         width: 85%;
+    }
+    .login-system .form-item input{
+        width: 90%;
     }
 }
 

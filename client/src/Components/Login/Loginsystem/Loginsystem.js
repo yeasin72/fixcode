@@ -5,16 +5,20 @@ import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../../redux/actions/userAction';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
 const Loginsystem = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordtoggle, setpasswordtoggle] = useState(false);
 
     const emailChanged = (e) => setEmail(e.target.value);
     const passwordChanged = (e) => setPassword(e.target.value);
     const goDashbord = () => window.location.replace("/")
-    
+    const passToggle = () => {
+        setpasswordtoggle(!passwordtoggle)
+    }
 
     // @function take response
     // @resone take response message after submitting form
@@ -49,9 +53,13 @@ const Loginsystem = () => {
                     <div className="form-item">
                         <input placeholder="E-mail Address" value={email} onChange={emailChanged} name="email" type="email" />
                     </div>
-                    <div className="form-item">
-                        <input placeholder="Password" value={password} onChange={passwordChanged} name="password" type="password" />
-                        <VisibilityIcon />
+                    <div className="form-item password">
+                        <input placeholder="Password" value={password} onChange={passwordChanged} name="password" type={passwordtoggle ? "text" : "password"} />
+                        {passwordtoggle ? 
+                            <VisibilityOffIcon onClick={passToggle} />
+                        :
+                            <VisibilityIcon onClick={passToggle} />
+                        }
                     </div>
                     <div className="form-item">
                         <button type="submit" className="default-button login-btn" onClick={createUser}>
