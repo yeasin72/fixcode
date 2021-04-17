@@ -20,7 +20,6 @@ const Dashboard = () => {
     const defaultProfile = useSelector(state => state.defaultProfile)
     const { profileData } = defaultProfile
 
-    
     function loadingOff(){
         setdashload(false)
         setlodingstyle({backgroundColor: '#FFFFFF', height: 'auto'})
